@@ -31,6 +31,11 @@ body {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
+ul {
+  list-style: none;
+  width: fit-content;
+}
+
 /* MOBILE HEADER SETTINGS */
 .header {
   background-color: var(--color-primary);
@@ -74,10 +79,7 @@ body {
   /* background-color: orange; */
   overflow: hidden;
 }
-ul {
-  list-style: none;
-  width: fit-content;
-}
+
 .menu-bar.mobile li {
   flex: 1;
   text-align: center;
@@ -129,19 +131,32 @@ main {
   color: var(--color-background);
 }
 
+.content {
+  flex: 1;
+  padding: 20px;
+  background-image: linear-gradient(#2d451b, #00000000),
+    url(../assets/bg-image/home-page-background.png);
+  background-position-y: 20%;
+  background-position-x: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
 .sidebar.active {
   display: block;
 }
 
 /* MOBILE FOOTER */
 .footer {
+  align-items: center;
   background-color: var(--color-primary);
   color: var(--color-text);
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding: 10px 15px;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
 }
 
@@ -152,47 +167,43 @@ main {
 
 .footer-information {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  gap: 15px;
   width: 100%;
+  flex-wrap: wrap;
   text-align: center;
 }
 
-.footer-description,
-.footer-working-hours,
-.footer-address {
-  line-height: 1.5;
-  font-size: 0.8rem;
-}
-
-.footer-working-hours::before,
-.footer-address::before {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.footer-information nav {
+.footer-details {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
 }
 
-.footer-information img {
-  width: 25px;
-  height: 25px;
-  transition: transform 0.3s;
+.footer-description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  width: 95%;
+  max-width: 400px;
+  margin: auto;
 }
 
-.footer-information img:hover {
-  transform: scale(1.1);
+.footer-social {
+  text-align: center;
+  padding-top: 15px;
 }
 
-.footer-information p {
-  font-size: 0.85rem;
+.footer-social img {
+  display: inline-block;
+  width: 48px;
+  height: auto;
+  padding: 12px 12px 12px 0;
 }
-
+.footer-copyright {
+  padding-bottom: 30px;
+}
 /*HOMEPAGE RELATED CSS*/
 .active {
   font-weight: 700;
@@ -225,6 +236,9 @@ main {
 
 @media (min-width: 769px) {
   /* DESKTOP HEADER SETTINGS */
+  h3 {
+    font-weight: 500;
+  }
   .header {
     padding: 0 40px 5px 40px;
   }
@@ -315,18 +329,18 @@ main {
     background-position-x: 80%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
+    height: 900px;
   }
 
   /* DESKTOP FOOTER SETTINGS */
   .footer {
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    text-align: center;
+    /* background-color: var(--color-primary);
+    color: var(--color-text); */
+    /* text-align: center; */
     padding: 40px 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
     gap: 30px;
   }
 
@@ -336,66 +350,57 @@ main {
   }
 
   .footer-information {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* flex-direction: column; */
+
+    /* justify-content: center; */
+    /* text-align: left; */
+    /* align-items: flex-start; */
+    /* width: 100%; */
+    max-width: 1300px;
+    column-gap: 20px;
+    text-align: left;
+  }
+
+  .footer-details {
     justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 1000px;
-    gap: 20px;
+    flex-direction: row;
+    column-gap: 20px;
+  }
+  .footer-description {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 280px;
+    margin: 0;
   }
 
-  .footer-description,
-  .footer-working-hours,
-  .footer-address {
-    font-size: 1rem;
-    flex: 1;
-    margin: 0 40px;
-    line-height: 1.6;
-    min-width: 220px;
-  }
-
-  .footer-working-hours {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-working-hours .footer-schedule {
-    font-size: 0.95rem;
-  }
-
-  .footer-address {
-    white-space: pre-line;
-  }
-
-  .footer-information,
-  .footer-information {
-    flex-basis: 100%;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .footer-information {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .footer-information img {
-    width: 25px;
-    height: 25px;
-    transition: transform 0.3s;
-  }
-
-  .footer-information img:hover {
-    transform: scale(1.1);
-  }
-
-  .footer-information p {
-    font-size: 0.9rem;
-    color: #4b1c00;
+  .footer-working-hours p {
     margin-top: 15px;
+    line-height: 175%;
+  }
+  .footer-address {
+    line-height: 175%;
+  }
+
+  .footer-address p:nth-of-type(2) {
+    line-height: 175%;
+    padding: 15px 0;
+  }
+  .footer-social img {
+    width: 52px;
+  }
+
+  .footer-copyright {
+    padding: 42px;
+  }
+  @media (min-width: 1200px) {
+    .footer-details {
+      column-gap: 100px;
+    }
+    .footer-description {
+      /* font-weight: 500; */
+      max-width: 400px;
+      font-size: 1.8rem;
+    }
   }
 }
