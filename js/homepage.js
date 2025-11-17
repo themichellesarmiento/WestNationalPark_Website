@@ -156,7 +156,7 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   image.alt = name;
   image.classList.add('image');
   imageContainer.appendChild(image);
-  
+
   nameContainer.textContent = name;
   groupNameContainer.textContent = group;
   descriptionContainer.textContent = description;
@@ -174,29 +174,43 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
 
 })
 
-//CLICKING an animal on the sidebar and info show in the content area 
+//DEFAULT message
+const welcomeMessage = document.createElement('div');
+welcomeMessage.classList.add('container');
+welcomeMessage.classList.add('show');
+welcomeMessage.classList.add('welcome-message');
+welcomeMessage.textContent = 'Welcome To West National Park'
+contentContainer.appendChild(welcomeMessage);
+
 const contentElements = document.querySelectorAll('.container')
 
+//HIDDING default message when an animal is selected
+//SHOW defualt messge when an element is off toggled       
+const message = document.querySelector('.welcome-message');
 sidebarElements.forEach(s => {
   const animalName = s.textContent.trim().toLowerCase().replace(/ /g, '-');
 
   s.addEventListener('click', (n => {
-     const currentlyActive = n.currentTarget.classList.contains('active');
+    const currentlyActive = n.currentTarget.classList.contains('active');
 
     //REMOVE all active elements on the sidebar as well as all contents
     sidebarElements.forEach(c => c.classList.remove('active'));
     contentElements.forEach(c => c.classList.remove('show'));
-   
-    //IF it was active do not show any content
-    if(currentlyActive){
+
+    //CLICKING a currently active element
+    if (currentlyActive) {
+      //SHOW default message
+      message.classList.add('show');
       return;
     }
 
     n.currentTarget.classList.add('active');
+    //HIDE default message
+    message.classList.remove('show');
 
     //SHOW the matching content section
-    contentElements.forEach(c=>{
-       if (c.classList.contains(animalName)) {
+    contentElements.forEach(c => {
+      if (c.classList.contains(animalName)) {
         c.classList.add('show');
       }
     })
