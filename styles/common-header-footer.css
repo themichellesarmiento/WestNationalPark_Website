@@ -232,6 +232,15 @@ main {
   object-fit: cover;
 }
 
+.container{
+  padding: 0.5rem 1rem;
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
 @media (min-width: 390px) {
   .header-logo img {
     height: 60px;

@@ -135,14 +135,14 @@ menuLabels.forEach(({ name, text }) => {
 
 const sidebarElements = document.querySelectorAll('.animal');
 
-sidebarElements.forEach(sidebar => sidebar.addEventListener('click', (n => {
-  const currentlyActive = n.currentTarget.classList.contains('active');
-  document.querySelectorAll('.active').forEach(s => s.classList.remove('active'));
+// sidebarElements.forEach(sidebar => sidebar.addEventListener('click', (n => {
+//   const currentlyActive = n.currentTarget.classList.contains('active');
+//   document.querySelectorAll('.active').forEach(s => s.classList.remove('active'));
 
-  if (!currentlyActive) {
-    n.currentTarget.classList.add('active')
-  }
-})))
+//   if (!currentlyActive) {
+//     n.currentTarget.classList.add('active')
+//   }
+// })))
 
 //-----------------------------------------END OF SIDEBAR RELATED CONTENTS------------------------------------------
 
@@ -181,4 +181,28 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
 
   contentContainer.appendChild(groupContainer);
 
+})
+
+//CLICKING an animal on the sidebar and info show in the content area 
+const contentElements = document.querySelectorAll('.container')
+
+sidebarElements.forEach(s => {
+  const animalName = s.textContent.trim().toLowerCase().replace(/ /g, '-');
+
+  s.addEventListener('click', (n => {
+     const currentlyActive = n.currentTarget.classList.contains('active');
+
+    contentElements.forEach(c => {
+      c.classList.remove('show');
+      if (c.classList.contains(animalName)) {
+        c.classList.add('show');
+      }
+    })
+    sidebarElements.forEach(c => c.classList.remove('active'))
+    
+    if(!currentlyActive){
+      s.classList.add('active');
+    }
+
+  }))
 })
