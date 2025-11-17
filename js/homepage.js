@@ -25,7 +25,7 @@ class Animal {
   }
 }
 
-const description = (text) => text.slice(0, 200);
+const description = (text) => text.slice(0, 200) + '...';
 
 const echidna = new Animal('Echidna', description(`Echidnas, also called spiny anteaters, are walking contradictions. They are mammals,but they lay eggs.
   They are often classified as long - or sort - beaked, but don't have beaks at all, in the traditional sense; 
@@ -145,10 +145,15 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   groupContainer.classList.add(name.trim().toLowerCase().replace(/ /g, '-'));
 
   const nameContainer = document.createElement('h2');
-  const groupNameContainer = document.createElement('h4');
   const descriptionContainer = document.createElement('p');
-  const linkContainer = document.createElement('button');
   const dietContainer = document.createElement('h4');
+
+
+  const linkContainer = document.createElement('a');
+  linkContainer.classList.add('button');
+  linkContainer.textContent = group;
+  linkContainer.href = url;
+  linkContainer.target = '_blank';
 
   const imageContainer = document.createElement('div');
   imageContainer.classList.add('image-container');
@@ -159,16 +164,15 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   imageContainer.appendChild(image);
 
   nameContainer.textContent = name;
-  groupNameContainer.textContent = group;
+  // groupNameContainer.textContent = group;
   descriptionContainer.textContent = description;
   dietContainer.textContent = `Diet: ${food}`;
-  linkContainer.textContent = url;
+  // linkContainer.textContent = url;
 
   groupContainer.appendChild(imageContainer);
   groupContainer.appendChild(nameContainer);
   groupContainer.appendChild(descriptionContainer);
   groupContainer.appendChild(dietContainer);
-  groupContainer.appendChild(groupNameContainer);
   groupContainer.appendChild(linkContainer);
 
   contentContainer.appendChild(groupContainer);
