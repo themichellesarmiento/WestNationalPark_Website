@@ -48,18 +48,31 @@ let heading = document.createElement("h2");
 heading.textContent = "MAMMALS";
 sidebar.appendChild(heading);
 
+// Default welcome message
+mainContent.innerHTML = `<h2>Welcome to Mammals Section</h2>`;
+
 // Add each animal to sidebar
 mammalArray.forEach(mammal => {
     let item = document.createElement("div");
     item.textContent = mammal.name;
+    item.classList.add("sideBar_mammals")
     item.style.cursor = "pointer";
     item.style.padding = "5px 0";
     sidebar.appendChild(item);
 
     
      // Click event: show only that animal's details
-    item.addEventListener("click", () => {
+
+    item.addEventListener("click", () => { let isActive = item.classList.contains("active");
+
+        if (isActive) {
+            item.classList.remove("active");
+            mainContent.innerHTML = `<h2>Welcome to Mammals Section</h2>`;
+            return;
+        }
+
         // Clear previous active
+
         document.querySelectorAll(".sidebar div.active").forEach(el => el.classList.remove("active"));
 
         // Set active class on clicked item
