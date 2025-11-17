@@ -220,6 +220,17 @@ main {
   margin-left: 2rem;
   font-size: 1rem;
 }
+.image-container{
+ height: 300px;
+ width: 300px;
+ margin: auto;
+
+}
+.image{
+  width:auto;
+  height:100%;
+  object-fit: cover;
+}
 
 @media (min-width: 390px) {
   .header-logo img {
