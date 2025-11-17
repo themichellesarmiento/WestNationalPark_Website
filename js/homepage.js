@@ -135,15 +135,6 @@ menuLabels.forEach(({ name, text }) => {
 
 const sidebarElements = document.querySelectorAll('.animal');
 
-// sidebarElements.forEach(sidebar => sidebar.addEventListener('click', (n => {
-//   const currentlyActive = n.currentTarget.classList.contains('active');
-//   document.querySelectorAll('.active').forEach(s => s.classList.remove('active'));
-
-//   if (!currentlyActive) {
-//     n.currentTarget.classList.add('active')
-//   }
-// })))
-
 //-----------------------------------------END OF SIDEBAR RELATED CONTENTS------------------------------------------
 
 //CONTENT area for all animals
@@ -192,17 +183,23 @@ sidebarElements.forEach(s => {
   s.addEventListener('click', (n => {
      const currentlyActive = n.currentTarget.classList.contains('active');
 
-    contentElements.forEach(c => {
-      c.classList.remove('show');
-      if (c.classList.contains(animalName)) {
+    //REMOVE all active elements on the sidebar as well as all contents
+    sidebarElements.forEach(c => c.classList.remove('active'));
+    contentElements.forEach(c => c.classList.remove('show'));
+   
+    //IF it was active do not show any content
+    if(currentlyActive){
+      return;
+    }
+
+    n.currentTarget.classList.add('active');
+
+    //SHOW the matching content section
+    contentElements.forEach(c=>{
+       if (c.classList.contains(animalName)) {
         c.classList.add('show');
       }
     })
-    sidebarElements.forEach(c => c.classList.remove('active'))
-    
-    if(!currentlyActive){
-      s.classList.add('active');
-    }
 
   }))
 })
