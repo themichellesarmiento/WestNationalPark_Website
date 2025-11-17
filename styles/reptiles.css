@@ -1,25 +1,106 @@
-.sidebar-heading,
-.sidebar-names {
-    color: white;
-    margin: 5px 0;
-    padding: 4px 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    line-height: 1.5;
-}
-
+/* SIDEBAR  */
 .sidebar-heading {
-    font-size: 2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
 }
 
 .sidebar-names {
-    font-size: 1.5rem;
+    list-style-type: none;
+    margin: 0.5rem 0;
+    margin-left: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgb(220, 220, 220);
 }
 
 .sidebar-names.active,
 .sidebar-heading.active {
-    background-color: rgb(24, 221, 50);
-    color: black;
-    font-weight: bold;
+    font-weight: 700;
+    color: rgb(255, 218, 119);
+}
+
+/* MAIN CONTENT */
+.content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.animal-content,
+.intro-content {
+    display: none;
+}
+
+.intro-content.active {
+    display: block;
+    background-color: rgb(58, 74, 47);
+    color: rgb(240, 240, 240);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.animal-content.active {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(58, 74, 47, 0.5);
+    color: #fff;
+}
+
+.animal-content h2 {
+    margin: 0 0 10px 0;
+    color: #ffda77;
+    text-align: center;
+}
+
+.animal-content .image-desc-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.animal-content img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.animal-content p.description {
+    flex: 1;
+    margin: 0;
+}
+
+/* ADDITIONAL INFORMATION */
+.read-more {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    background-color: #ffda77;
+    color: #3a4a2f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    background-color: rgb(255, 198, 59);
+}
+
+.additional-info {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-left: 3px solid rgb(255, 218, 119);
+    background-color: rgba(255, 218, 119, 0.2);
+    border-radius: 5px;
+    color: white;
+}
+
+.additional-info.active {
+    display: block;
 }
