@@ -56,8 +56,6 @@ mammalArray.forEach(mammal => {
     let item = document.createElement("div");
     item.textContent = mammal.name;
     item.classList.add("sideBar_mammals")
-    item.style.cursor = "pointer";
-    item.style.padding = "5px 0";
     sidebar.appendChild(item);
 
     
