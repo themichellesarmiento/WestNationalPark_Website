@@ -52,7 +52,7 @@ const frillNeckedLizard = new Animal('Frill-Necked-Lizard', description(`When th
 coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses. If an attacker
 is unintimidated by these antics, the lizard simply turns tail, mouth and frill open, and bolts, legs
 splaying left and right. It continues its deliberate run without stopping or looking back until it reaches
-the safety of a tree.`), `Small insects and spiders`, 'reptile', './assets/animals/reptiles/reptiles- frill_neckled.png', 'reptiles.html');
+the safety of a tree.`), `Small insects and spiders`, 'reptile', './assets/animals/reptiles/reptiles-frill_neckled.png', 'reptiles.html');
 
 const hawksBillTurtle = new Animal('Hawksbill Turtle', description(`The Hawksbill Sea Turtle gets its common name from the distinctive mouth, which
 resembles a bird's beak. The shell, or carapace, is covered in large overlapping scutes, which are a
@@ -141,6 +141,7 @@ const sidebarElements = document.querySelectorAll('.animal');
 zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   const groupContainer = document.createElement('div');
   groupContainer.classList.add('container');
+  groupContainer.classList.add('box');
   groupContainer.classList.add(name.trim().toLowerCase().replace(/ /g, '-'));
 
   const nameContainer = document.createElement('h2');
@@ -160,7 +161,7 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   nameContainer.textContent = name;
   groupNameContainer.textContent = group;
   descriptionContainer.textContent = description;
-  dietContainer.textContent = food;
+  dietContainer.textContent = `Diet: ${food}`;
   linkContainer.textContent = url;
 
   groupContainer.appendChild(imageContainer);
