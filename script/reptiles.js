@@ -1,6 +1,6 @@
 //MAKING FUNCTION CONSTRUCTOR WITH DIFFERENT VARIABLES
-function Reptiles(name, lifespan, group, food, description, length, weight, found) {
-    this.name = name,
+function Reptiles(name, lifespan, group, food, description, length, weight, found,) {
+        this.name = name,
         this.lifespan = lifespan,
         this.group = group,
         this.food = food,

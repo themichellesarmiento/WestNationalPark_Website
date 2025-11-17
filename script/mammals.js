@@ -8,8 +8,9 @@ function Mammals(name, lifespan, group, food, description, length, weight, found
     this.description = description;
     this.length = length;
     this.weight = weight;
-    this.found = found;
-}
+    this.found = found
+    
+};
 
 // Animals
 
@@ -42,6 +43,7 @@ let mammalArray = [mammalEchidna, mammalTasmanianDevil, mammalQuokka];
 
 let sidebar = document.querySelector(".sidebar");
 let mainContent = document.querySelector(".mammal_Container");
+mainContent.classList.add("content-mammals-style")
 
 // Create heading
 let heading = document.createElement("h2");
@@ -79,14 +81,18 @@ mammalArray.forEach(mammal => {
         item.classList.add("active");
 
         mainContent.innerHTML = `
-            <h2>${mammalEchidna.name}</h2>
-            <p><strong>Lifespan:</strong> ${mammalEchidna.lifespan}</p>
-            <p><strong>Group:</strong> ${mammalEchidna.group}</p>
-            <p><strong>Food:</strong> ${mammalEchidna.food}</p>
-            <p><strong>Description:</strong> ${mammalEchidna.description}</p>
-            <p><strong>Length:</strong> ${mammalEchidna.length}</p>
-            <p><strong>Weight:</strong> ${mammalEchidna.weight}</p>
-            <p><strong>Found:</strong> ${mammalEchidna.found}</p>`;
+            <h2>${mammal.name}</h2>
+            
+            <p><strong>Lifespan:</strong> ${mammal.lifespan}</p>
+            <p><strong>Group:</strong> ${mammal.group}</p>
+            <p><strong>Food:</strong> ${mammal.food}</p>
+            <p><strong>Description:</strong> ${mammal.description}</p>
+            <p><strong>Length:</strong> ${mammal.length}</p>
+            <p><strong>Weight:</strong> ${mammal.weight}</p>
+            <p><strong>Found:</strong> ${mammal.found}</p>`;
+
+
+             
     });
 });
 
