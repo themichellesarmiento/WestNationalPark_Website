@@ -167,6 +167,8 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
 }
 
 .content-button {

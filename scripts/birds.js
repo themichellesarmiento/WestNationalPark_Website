@@ -22,7 +22,7 @@ function Birds(
 
 const birdCassowary = new Birds(
   'Cassowary',
-  'It is not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds.   These large birds cannot fly, but their extremely powerful legs propel them at great speeds. They are strong swimmers and can move quickly on both land and water. Cassowaries are shy and they are usually hard to spot, at least in their natural rain forest habitats. They are not overly aggressive, and attacks are rare. But they can do a lot of damage if they are provoked or angered. Cassowary attacks have occasionally been deadly, including a recent one which occurred in 2019, at a private collection of caged birds in Florida',
+  'It is not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds. These large birds cannot fly, but their extremely powerful legs propel them at great speeds. They are strong swimmers and can move quickly on both land and water. Cassowaries are shy and they are usually hard to spot, at least in their natural rain forest habitats. They are not overly aggressive, and attacks are rare. But they can do a lot of damage if they are provoked or angered. Cassowary attacks have occasionally been deadly, including a recent one which occurred in 2019, at a private collection of caged birds in Florida',
   'Bird',
   '20 Years',
   'Plants matter like fruit, insects and small animals like mice and lizards',
@@ -57,7 +57,7 @@ const birdBlackCockatoo = new Birds(
 const contentWelcomeDescription = `Australia is home to over 800 bird species, with roughly 350 endemic.Many Australian birds are famous for their striking colors, such as the parrots and cockatoos, as well as unique behaviors like the Lyrebird's incredible mimicry.Kookaburra is amous for its loud, laughing call, commonly heard in urban and rural areas. Cockatoos is a diverse group of parrots, often seen in large, noisy flocks. Climate change and land clearing have also negatively impacted bird populations, with major bushfires causing significant loss of life.`;
 
 let activelink = null;
-let seeMore = false;
+let seemore = false;
 
 const content = document.querySelector('.content');
 const sidebar = document.querySelector('.sidebar');
@@ -115,46 +115,72 @@ const displayWelcomeContent = () => {
 
 const displayContent = (index) => {
   content.innerHTML = '';
+
   const contentBridName = document.createElement('h2');
   const birdImage = document.createElement('img');
   const birdDescription = document.createElement('p');
+  const seeMoreButton = document.createElement('button');
+  const seemoreContent = document.createElement('div');
 
   contentBridName.textContent = birdContent[index].birdName;
-
+  birdDescription.style.paddingBottom = '15px';
   birdImage.src = birdContent[index].imageURL;
   birdImage.alt = birdContent[index].birdName + ' bird image';
-  birdImage.style.width = '500px';
+  birdImage.style.width = '70%';
+  birdImage.style.maxWidth = '650px';
   birdImage.style.height = 'auto';
+  birdImage.style.padding = '18px 0';
 
-  birdDescription.textContent = !seeMore
+  birdDescription.textContent = !seemore
     ? birdContent[index].description.slice(0, 500)
     : birdContent[index].description;
-  if (seeMore) {
-    const seemoreContent = document.createElement('p');
-    seemoreContent.textContent = `Group : ${birdContent[index].group} \n Lifespan : ${birdContent[index].lifespan}\n Food :${birdContent[index].food}\n Found: ${birdContent[index].found} \n Lengthofbird: ${birdContent[index].lengthofbird} \n Weight : ${birdContent[index].weight}`;
+
+  if (seemore) {
+    const seemoreDetails = [
+      { detail: 'Group', value: birdContent[index].group },
+      { detail: 'Lifespan', value: birdContent[index].lifespan },
+      { detail: 'Food', value: birdContent[index].food },
+      { detail: 'Found', value: birdContent[index].found },
+      { detail: 'Length of bird', value: birdContent[index].lengthofbird },
+      { detail: 'Weight', value: birdContent[index].weight },
+    ];
+
+    seemoreDetails.forEach((item) => {
+      console.log(item);
+      const seemoreDetailAndValue = document.createElement('p');
+      seemoreDetailAndValue.style.padding = '10px 0';
+      const detailSpan = document.createElement('span');
+      detailSpan.textContent = item.detail + ': ';
+      detailSpan.style.fontWeight = '500';
+
+      const valueSpan = document.createElement('span');
+      valueSpan.textContent = item.value;
+
+      seemoreDetailAndValue.appendChild(detailSpan);
+      seemoreDetailAndValue.appendChild(valueSpan);
+
+      seemoreContent.appendChild(seemoreDetailAndValue);
+    });
   }
 
-  const seeMoreButton = document.createElement('button');
   contentButton = seeMoreButton;
-  seeMoreButton.textContent = seeMore ? 'See less' : 'See more';
+  seeMoreButton.textContent = seemore ? 'See less' : 'See more';
   seeMoreButton.classList.add('content-button');
 
   seeMoreButton.addEventListener('click', () => {
-    seeMore = !seeMore;
+    seemore = !seemore;
     displayContent(index);
-    console.log(`See meore result: ${seeMore}`);
+    console.log(`See meore result: ${seemore}`);
   });
 
   content.appendChild(contentBridName);
   content.appendChild(birdImage);
   content.appendChild(birdDescription);
-  if (seeMore) {
+  if (seemore && seemoreContent) {
     content.appendChild(seemoreContent);
   }
   content.appendChild(seeMoreButton);
 };
-
-displayWelcomeContent();
 
 const resetSideBarLinks = () => {
   sidebarLinks.forEach((item) => {
@@ -162,6 +188,8 @@ const resetSideBarLinks = () => {
     item.classList.add('sidebar-links');
   });
 };
+
+displayWelcomeContent();
 
 sidebarLinks.forEach((item, index) => {
   item.addEventListener('click', () => {
@@ -171,6 +199,7 @@ sidebarLinks.forEach((item, index) => {
       activelink = null;
       return;
     }
+    seemore = false;
     resetSideBarLinks();
     item.classList.add('sidebar-link-active');
     displayContent(index);
