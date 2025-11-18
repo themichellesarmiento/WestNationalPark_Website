@@ -30,7 +30,7 @@ let mammalTasmanianDevil = new Mammals(
 let mammalQuokka = new Mammals(
     "Quokka", "10 years", "Mammals",
     "Plant eaters, shrubs and grasses",
-    "TThe Quokka, Setonix brachyurus, was described by early Dutch explorer, Willem de Vlamingh, 'as a kind of rat as big as a common cat'. His first sighting of the Quokka was on an island off the mouth of the Swan River. He named the island Rottenest ('rat nest') in honour of this sighting. The island is now known as Rottnest Island. Essentially the Quokka looks very much like other wallabies.It has short, very coarse and thick grey-brown fur over most of the body with lighter parts underneath. Its facial features consist of a naked nose on a short, broad face with rounded furry ears.The tail is relatively short and mostly devoid of hair. In contrast, the hair on the feet extends to cover its claws.",
+    "The Quokka, Setonix brachyurus, was described by early Dutch explorer, Willem de Vlamingh, 'as a kind of rat as big as a common cat'. His first sighting of the Quokka was on an island off the mouth of the Swan River. He named the island Rottenest ('rat nest') in honour of this sighting. The island is now known as Rottnest Island. Essentially the Quokka looks very much like other wallabies.It has short, very coarse and thick grey-brown fur over most of the body with lighter parts underneath. Its facial features consist of a naked nose on a short, broad face with rounded furry ears.The tail is relatively short and mostly devoid of hair. In contrast, the hair on the feet extends to cover its claws.",
     "50cm", "3kg", "Rottnest Island" ,"../assets/animals/mammals/mammals-quokka.png"
 );
 
@@ -46,6 +46,14 @@ let introText = document.createElement("div");
 introText.classList.add("intro-text");
 introText.textContent = "Welcome to Mammals Section";
 mainContent.appendChild(introText);
+
+////////////////////////////////  testing
+let introParagraph = document.createElement("p");
+introParagraph.classList.add("intro_subtitle")
+introParagraph.textContent = "Australia is home to a wide variety of unique mammals, from the spiny Echidna to the friendly Quokka.";
+mainContent.appendChild(introParagraph)
+
+////////////////////////////////////////////////////////////
 
 // Sidebar heading
 let sidebarHeading = document.createElement("h3");
@@ -126,11 +134,15 @@ sidebar.appendChild(sidebarHeading);
         // If clicking same active item, show welcome message
         if (isActive) {
             introText.style.display = "block";
-        } else {
+            introParagraph.style.display = "block"
+        } 
+        else {
             // Show selected animal content
             sidebarItem.classList.add("active");
             animalContent.classList.add("active");
             introText.style.display = "none";
+
+            introParagraph.style.display = "none"; 
         }
     });
 });
