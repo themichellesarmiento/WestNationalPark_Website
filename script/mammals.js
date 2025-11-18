@@ -47,13 +47,11 @@ introText.classList.add("intro-text");
 introText.textContent = "Welcome to Mammals Section";
 mainContent.appendChild(introText);
 
-////////////////////////////////  testing
+// Default welcome short paragraph
 let introParagraph = document.createElement("p");
 introParagraph.classList.add("intro_subtitle")
 introParagraph.textContent = "Australia is home to a wide variety of unique mammals, from the spiny Echidna to the friendly Quokka.";
 mainContent.appendChild(introParagraph)
-
-////////////////////////////////////////////////////////////
 
 // Sidebar heading
 let sidebarHeading = document.createElement("h3");
