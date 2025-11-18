@@ -202,22 +202,6 @@ main {
 .footer-copyright {
   padding-bottom: 30px;
 }
-/*HOMEPAGE RELATED CSS*/
-.active {
-  font-weight: 700;
-}
-
-.group {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.animal {
-  list-style-type: none;
-  margin: 0.5rem 0;
-  margin-left: 2rem;
-  font-size: 1rem;
-}
 
 @media (min-width: 390px) {
   .header-logo img {
