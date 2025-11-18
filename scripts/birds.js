@@ -67,29 +67,27 @@ content.style.backgroundImage = 'none';
 content.style.backgroundColor = '#eee9dd';
 
 const sidebarBirdsInnerDiv = document.createElement('div');
-// sidebarBirdsInnerDiv.style.backgroundColor = '#6be50eff';
-
 const sidebarBirdsTitle = document.createElement('h3');
+const sidebarLinkKookaburra = document.createElement('p');
+const sidebarLinkCassowary = document.createElement('p');
+const sidebarLinkBlackCockatoo = document.createElement('p');
+
 sidebarBirdsTitle.classList.add('sidebar-titile');
 sidebarBirdsTitle.textContent = 'Birds';
 sidebarBirdsInnerDiv.appendChild(sidebarBirdsTitle);
 
-const sidebarLinkKookaburra = document.createElement('p');
 sidebarLinkKookaburra.classList.add('sidebar-links');
 sidebarLinkKookaburra.textContent = 'Kookaburra';
 
-const sidebarLinkCassowary = document.createElement('p');
 sidebarLinkCassowary.classList.add('sidebar-links');
 sidebarLinkCassowary.textContent = 'Cassowary';
 
-const sidebarLinkBlackCockatoo = document.createElement('p');
 sidebarLinkBlackCockatoo.classList.add('sidebar-links');
 sidebarLinkBlackCockatoo.textContent = 'Black cockatoo';
 
 sidebarBirdsInnerDiv.appendChild(sidebarLinkCassowary);
 sidebarBirdsInnerDiv.appendChild(sidebarLinkKookaburra);
 sidebarBirdsInnerDiv.appendChild(sidebarLinkBlackCockatoo);
-// sidebarBirdInnerDiv.style.backgroundColor = '#6be50eff';
 
 sidebar.appendChild(sidebarBirdsInnerDiv);
 
@@ -106,6 +104,7 @@ const displayWelcomeContent = () => {
   const contenWrapper = document.createElement('div');
   const contentTitle = document.createElement('h2');
   const contentParagraph = document.createElement('p');
+
   contentTitle.textContent = 'Welcome to the birds section';
   contentParagraph.textContent = contentWelcomeDescription;
   contentTitle.style.padding = '15px 0';
@@ -118,7 +117,6 @@ const displayWelcomeContent = () => {
 
 const displayContent = (index) => {
   content.innerHTML = '';
-
   const contentBridName = document.createElement('h2');
   const birdImage = document.createElement('img');
   const birdDescription = document.createElement('p');
@@ -149,16 +147,13 @@ const displayContent = (index) => {
     ];
 
     seemoreDetails.forEach((item) => {
-      console.log(item);
       const seemoreDetailAndValue = document.createElement('p');
       seemoreDetailAndValue.style.padding = '10px 0';
       const detailSpan = document.createElement('span');
       detailSpan.textContent = item.detail + ': ';
       detailSpan.style.fontWeight = '500';
-
       const valueSpan = document.createElement('span');
       valueSpan.textContent = item.value;
-
       seemoreDetailAndValue.appendChild(detailSpan);
       seemoreDetailAndValue.appendChild(valueSpan);
 
@@ -173,12 +168,12 @@ const displayContent = (index) => {
   seeMoreButton.addEventListener('click', () => {
     seemore = !seemore;
     displayContent(index);
-    console.log(`See meore result: ${seemore}`);
   });
 
   content.appendChild(contentBridName);
   content.appendChild(birdImage);
   content.appendChild(birdDescription);
+
   if (seemore && seemoreContent) {
     content.appendChild(seemoreContent);
   }
@@ -208,6 +203,5 @@ sidebarLinks.forEach((item, index) => {
     displayContent(index);
     activelink = item;
     activeIndex = index;
-    console.log(activeIndex);
   });
 });
