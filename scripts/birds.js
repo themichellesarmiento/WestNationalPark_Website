@@ -72,7 +72,7 @@ const sidebarLinkKookaburra = document.createElement('p');
 const sidebarLinkCassowary = document.createElement('p');
 const sidebarLinkBlackCockatoo = document.createElement('p');
 
-sidebarBirdsTitle.classList.add('sidebar-titile');
+sidebarBirdsTitle.classList.add('sidebar-title');
 sidebarBirdsTitle.textContent = 'Birds';
 sidebarBirdsInnerDiv.appendChild(sidebarBirdsTitle);
 

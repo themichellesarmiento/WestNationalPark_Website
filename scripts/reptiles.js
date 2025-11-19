@@ -13,7 +13,7 @@ function Reptiles(name, lifespan, group, food, description, length, weight, foun
 
 // ===CREATE REPTILES===
 let reptileFrillNeckedLizard = new Reptiles(
-    "Frill-Necked Lizard",
+    "Frill-necked lizard",
     "20 years",
     "Reptile",
     "Small insects and spiders",
@@ -21,10 +21,10 @@ let reptileFrillNeckedLizard = new Reptiles(
     "90 cm",
     "1 kg",
     "Northern Australia",
-    "assets/Animals/Reptiles/reptiles-frill_neckled.png"
+    "assets/animals/reptiles/reptiles-frill_neckled.png"
 );
 let reptileHawksbillTurtle = new Reptiles(
-    "Hawksbill Turtle",
+    "Hawksbill turtle",
     "50 years",
     "Reptile",
     "Other animals (sponges & jellyfish), sea plants",
@@ -32,7 +32,7 @@ let reptileHawksbillTurtle = new Reptiles(
     "80 cm (carapace)",
     "50 kg",
     "Tropical coasts of Queensland, Northern Territory and Western Australia",
-    "assets/Animals/Reptiles/reptiles-hawsksbill_turtle.png"
+    "assets/animals/reptiles/reptiles-hawsksbill_turtle.png"
 );
 let reptilePerentie = new Reptiles(
     "Perentie",
@@ -43,7 +43,7 @@ let reptilePerentie = new Reptiles(
     "2.5 m",
     "20 kg",
     "Deserts",
-    "assets/Animals/Reptiles/reptiles-perentie.png"
+    "assets/animals/reptiles/reptiles-perentie.png"
 );
 
 // === ARRAY OF REPTILES ===
@@ -61,7 +61,8 @@ let introHeading = document.createElement("h2");
 introHeading.textContent = "Welcome to the Reptiles Section";
 
 let introParagraph = document.createElement("p");
-introParagraph.textContent = "Explore the fascinating world of reptiles! Click on a name in the sidebar to learn more about each animal.";
+introParagraph.textContent =
+    "Australia is home to some of the world's most remarkable reptiles, with over 1,000 species found across deserts, forests, wetlands, and coastal regions. Many of them are unique to the continent, including a wide range of skinks, geckos, pythons, and monitor lizards. Australia also hosts some of the most venomous snakes on the planet, yet most species avoid human contact and play an essential role in balancing ecosystems. From the ancient and slow-moving freshwater turtles to the lightning-fast perentie — the largest monitor lizard in Australia — reptiles continue to shape the continent's biodiversity. Despite their adaptability, many species face threats from habitat loss, invasive predators, and climate change.";
 
 introContainer.appendChild(introHeading);
 introContainer.appendChild(introParagraph);
@@ -69,7 +70,7 @@ mainContent.appendChild(introContainer);
 
 // === CREATE HEADING IN SIDEBAR ===
 let sidebarHeading = document.createElement("h3");
-sidebarHeading.textContent = "REPTILES";
+sidebarHeading.textContent = "Reptiles";
 sidebarHeading.classList.add("sidebar-heading");
 sidebarReptiles.appendChild(sidebarHeading);
 

@@ -147,7 +147,7 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   const nameContainer = document.createElement('h2');
   const descriptionContainer = document.createElement('p');
   const dietContainer = document.createElement('h4');
-
+  const paragraphContainer = document.createElement('h4');
 
   const linkContainer = document.createElement('a');
   linkContainer.classList.add('button');
@@ -166,11 +166,13 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   nameContainer.textContent = name;
   descriptionContainer.textContent = description;
   dietContainer.textContent = `Diet: ${food}`;
+  paragraphContainer.textContent ='To know more about this animal and those that belongs to the same group click the button below:'
  
-  groupContainer.appendChild(imageContainer);
   groupContainer.appendChild(nameContainer);
+  groupContainer.appendChild(imageContainer);
   groupContainer.appendChild(descriptionContainer);
   groupContainer.appendChild(dietContainer);
+  groupContainer.appendChild(paragraphContainer);
   groupContainer.appendChild(linkContainer);
 
   contentContainer.appendChild(groupContainer);
@@ -180,16 +182,26 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
 //DEFAULT message
 const welcomeMessage = document.createElement('div');
 welcomeMessage.classList.add('container');
+welcomeMessage.classList.add('welcome-message-container')
 welcomeMessage.classList.add('show');
-welcomeMessage.classList.add('welcome-message');
-welcomeMessage.textContent = 'Welcome To West National Park'
+
+const welcomeHeading = document.createElement('h1');
+welcomeHeading.classList.add('welcome-message');
+welcomeHeading.textContent = 'Welcome To West National Park';
+const welcomeSubHeading = document.createElement('h2');
+welcomeSubHeading.classList.add('welcome-message-subheading');
+welcomeSubHeading.textContent = 'Discover and experience the nature in one place';
+
+welcomeMessage.appendChild(welcomeHeading);
+welcomeMessage.appendChild(welcomeSubHeading);
+
 contentContainer.appendChild(welcomeMessage);
 
 const contentElements = document.querySelectorAll('.container')
 
 //HIDDING default message when an animal is selected
 //SHOW defualt messge when an element is off toggled       
-const message = document.querySelector('.welcome-message');
+const message = document.querySelector('.welcome-message-container');
 sidebarElements.forEach(s => {
   const animalName = s.textContent.trim().toLowerCase().replace(/ /g, '-');
 
@@ -204,6 +216,7 @@ sidebarElements.forEach(s => {
     if (currentlyActive) {
       //SHOW default message
       message.classList.add('show');
+      contentContainer.classList.remove('animal-content');
       return;
     }
 
@@ -215,6 +228,7 @@ sidebarElements.forEach(s => {
     contentElements.forEach(c => {
       if (c.classList.contains(animalName)) {
         c.classList.add('show');
+        contentContainer.classList.add('animal-content');
       }
     })
 

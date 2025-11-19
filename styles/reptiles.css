@@ -1,106 +1,125 @@
-/* SIDEBAR  */
+/* COLORS */
+:root {
+    --color-primary: #e29300;
+    --color-secondary: #2d451b;
+    --color-background: #eee9dd;
+    --color-text: #210e08;
+}
+
+/* SIDEBAR */
 .sidebar-heading {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: white;
+    font-weight: 300;
+    font-size: 1.4rem;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    color: var(--color-background);
 }
 
 .sidebar-names {
-    list-style-type: none;
-    margin: 0.5rem 0;
-    margin-left: 2rem;
-    font-size: 1rem;
+    font-weight: 300;
+    font-size: 1.15rem;
+    padding: 10px;
     cursor: pointer;
-    color: rgb(220, 220, 220);
+    color: var(--color-background);
+}
+
+.sidebar-names:hover {
+    color: var(--color-primary);
 }
 
 .sidebar-names.active,
 .sidebar-heading.active {
-    font-weight: 700;
-    color: rgb(255, 218, 119);
+    font-weight: 400;
+    color: var(--color-primary);
 }
 
 /* MAIN CONTENT */
 .content {
-    padding: 20px;
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    background: none;
+    background-color: #eee9dd;
 }
 
-.animal-content,
 .intro-content {
     display: none;
+    padding: 20px 0;
 }
 
 .intro-content.active {
     display: block;
-    background-color: rgb(58, 74, 47);
-    color: rgb(240, 240, 240);
-    padding: 20px;
-    border-radius: 8px;
+}
+
+.intro-content h2 {
+    padding: 15px 0;
+    color: var(--color-text);
+}
+
+.intro-content p {
+    max-width: 1000px;
+    padding: 15px 0;
+    color: var(--color-text);
+}
+
+.animal-content {
+    display: none;
+    flex-direction: column;
 }
 
 .animal-content.active {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: rgba(58, 74, 47, 0.5);
-    color: #fff;
 }
 
 .animal-content h2 {
-    margin: 0 0 10px 0;
-    color: #ffda77;
-    text-align: center;
+    padding: 15px 0;
+    color: var(--color-text);
 }
 
 .animal-content .image-desc-row {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     align-items: flex-start;
 }
 
 .animal-content img {
-    width: 100%;
-    max-width: 300px;
+    width: 70%;
+    max-width: 650px;
     height: auto;
-    border-radius: 5px;
+    padding: 18px 0;
+    object-fit: cover;
 }
 
 .animal-content p.description {
-    flex: 1;
-    margin: 0;
+    max-width: 1000px;
+    color: var(--color-text);
+    padding: 10px 0 20px 0;
+    text-align: left;
 }
 
-/* ADDITIONAL INFORMATION */
+/* READ MORE CONTENT */
 .read-more {
-    margin-top: 10px;
-    padding: 6px 12px;
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    padding: 10px 20px;
     border: none;
-    background-color: #ffda77;
-    color: #3a4a2f;
-    border-radius: 5px;
     cursor: pointer;
-}
-
-.read-more:hover {
-    background-color: rgb(255, 198, 59);
+    width: fit-content;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.95rem;
 }
 
 .additional-info {
     display: none;
-    margin-top: 10px;
-    padding: 10px;
-    border-left: 3px solid rgb(255, 218, 119);
-    background-color: rgba(255, 218, 119, 0.2);
-    border-radius: 5px;
-    color: white;
+    margin-top: 15px;
 }
 
 .additional-info.active {
     display: block;
+}
+
+.additional-info p {
+    color: var(--color-text);
+    padding: 10px 0;
 }
