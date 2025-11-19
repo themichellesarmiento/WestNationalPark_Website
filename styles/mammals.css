@@ -3,10 +3,10 @@
     box-sizing: border-box;
 }
 
-/* ===== MAIN CONTAINER ===== */
+/*  MAIN CONTAINER  */
 .mammal_Container {
    
-    color: white;
+    color: #e0e0e0;
 }
 
 /* Intro text */
@@ -14,8 +14,12 @@
     font-size: 1.5rem;
     font-weight: bold;  
 }
+.intro_subtitle 
+{
+    margin-top: 10px;
+}
 
-/* ===== SIDEBAR ===== */
+/*  SIDEBAR  */
 .sidebar {
     width: 200px;
     padding: 15px;  
@@ -31,7 +35,7 @@
     margin: 5px 0;
     transition: 0.2s;
 }
-/* ===== ANIMAL CONTENT ===== */
+/*  ANIMAL CONTENT  */
 .animal-content {
     display: none;
     margin-left: 220px; /* to avoid sidebar overlap */
@@ -58,6 +62,7 @@
 
 /* Short description */
 .animal-description {
+    color: #e0e0e0; 
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -69,7 +74,7 @@
     padding: 10px;   
 }
 
-/* ===== BUTTON ===== */
+/*  BUTTON  */
 .toggle-btn {
     display: inline-block;
     margin-top: 10px;
@@ -87,12 +92,6 @@
     background-color: #0056b3;
 }
 
-/* ===== CLEARFIX ===== */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
 .animal-img {
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -105,4 +104,61 @@
 
 .open{
   display: block;
+}
+
+/* RESPONSIVE  */
+
+@media (max-width: 669px) {
+    .mammal_Container {
+        margin-left: 0;
+        padding: 10px;
+    }
+    .intro_subtitle 
+{
+    margin-top: 5px;
+}
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .sidebar-names {
+        margin: 5px;
+        padding: 8px 12px;
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .animal-content {
+        margin-left: 0;
+    }
+
+    .animal-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .toggle-btn {
+        display: block;
+        width: fit-content;
+        margin: 10px 0;
+    }
+
+    .animal-title {
+        font-size: 1.4rem;
+    }
+
+    .animal-description, .extra-info {
+        font-size: 14px;
+    }
+
+    .intro-text {
+        font-size: 1.2rem;
+    }
 }
