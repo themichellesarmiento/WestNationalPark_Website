@@ -179,7 +179,7 @@ main {
   border: none;
   cursor: pointer;
 }
-.sidebar.active {
+.sidebar.open {
   display: block;
 }
 

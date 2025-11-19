@@ -1,7 +1,14 @@
 const arrowButton = document.querySelector('.sidebar-toggle');
-const sidebar = document.querySelector('.sidebar')
+const sidebarContent = document.querySelector('.sidebar')
 
-arrowButton.addEventListener('click' , ()=> {
-  arrowButton.classList.add('animate');
-  sidebar.classList.add('show')
+arrowButton.addEventListener('click',()=>{
+
+  if(sidebarContent.classList.contains('open')){
+    sidebarContent.classList.remove('open');
+    arrowButton.classList.remove('animate')
+  } else {
+    sidebarContent.classList.add('open');
+    arrowButton.classList.add('animate');
+  }
+
 })
