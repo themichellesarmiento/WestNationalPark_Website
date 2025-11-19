@@ -183,6 +183,10 @@ main {
   display: block;
 }
 
+.animate{
+   transform: rotate(180deg);
+}
+
 /* MOBILE FOOTER */
 .footer {
   align-items: center;
