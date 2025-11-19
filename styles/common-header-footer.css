@@ -131,7 +131,6 @@ main {
   width: 100%;
   background-color: var(--color-secondary);
   min-height: 300px;
-  max-width: 320px;
   color: var(--color-background);
 }
 
