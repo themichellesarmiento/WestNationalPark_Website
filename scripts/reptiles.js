@@ -13,7 +13,7 @@ function Reptiles(name, lifespan, group, food, description, length, weight, foun
 
 // ===CREATE REPTILES===
 let reptileFrillNeckedLizard = new Reptiles(
-    "Frill-Necked Lizard",
+    "Frill-necked lizard",
     "20 years",
     "Reptile",
     "Small insects and spiders",
@@ -21,10 +21,10 @@ let reptileFrillNeckedLizard = new Reptiles(
     "90 cm",
     "1 kg",
     "Northern Australia",
-    "assets/Animals/Reptiles/reptiles-frill_neckled.png"
+    "assets/animals/reptiles/reptiles-frill_neckled.png"
 );
 let reptileHawksbillTurtle = new Reptiles(
-    "Hawksbill Turtle",
+    "Hawksbill turtle",
     "50 years",
     "Reptile",
     "Other animals (sponges & jellyfish), sea plants",
@@ -32,7 +32,7 @@ let reptileHawksbillTurtle = new Reptiles(
     "80 cm (carapace)",
     "50 kg",
     "Tropical coasts of Queensland, Northern Territory and Western Australia",
-    "assets/Animals/Reptiles/reptiles-hawsksbill_turtle.png"
+    "assets/animals/reptiles/reptiles-hawsksbill_turtle.png"
 );
 let reptilePerentie = new Reptiles(
     "Perentie",
@@ -43,7 +43,7 @@ let reptilePerentie = new Reptiles(
     "2.5 m",
     "20 kg",
     "Deserts",
-    "assets/Animals/Reptiles/reptiles-perentie.png"
+    "assets/animals/reptiles/reptiles-perentie.png"
 );
 
 // === ARRAY OF REPTILES ===
@@ -70,7 +70,7 @@ mainContent.appendChild(introContainer);
 
 // === CREATE HEADING IN SIDEBAR ===
 let sidebarHeading = document.createElement("h3");
-sidebarHeading.textContent = "REPTILES";
+sidebarHeading.textContent = "Reptiles";
 sidebarHeading.classList.add("sidebar-heading");
 sidebarReptiles.appendChild(sidebarHeading);
 
