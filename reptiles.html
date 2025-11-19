@@ -6,7 +6,7 @@
     <title>Reptiles page</title>
     <link rel="stylesheet" href="./styles/common-header-footer.css" />
     <link rel="stylesheet" href="./styles/reptiles.css" />
-    <script src="./script/reptiles.js" defer></script>
+    <script src="./scripts/reptiles.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <header class="header">
+   <header class="header">
       <nav class="header-navbar">
         <div class="header-logo">
           <!-- home page html -->
@@ -84,21 +84,29 @@
           <img src="./assets/logos/logo.png" alt="Logo" />
         </a>
       </div>
+
       <div class="footer-information">
-        <div class="footer-description">
-          Discover and experiencing the nature in one place
+        <div class="footer-details">
+          <div class="footer-description">
+            Discover and experiencing the nature in one place
+          </div>
+          <div class="footer-working-hours">
+            <h3>Open hours</h3>
+            <p class="footer-schedule">
+              Monday to Friday: 08:00 - 15:00<br />Weekends: 09:00 - 18:00
+            </p>
+          </div>
+          <div class="footer-address">
+            <p>
+              West National Park,<br />
+              33, 115 27,Sydney.
+            </p>
+            <p>027 353 35 45</p>
+            <p>westpark@org.au</p>
+          </div>
         </div>
-        <div class="footer-working-hours">
-          Open hours
-          <p class="footer-schedule">
-            Monday to Friday: 8:00 AM - 7:00 PM Weekends 9:00 AM - 8:00 PM
-          </p>
-        </div>
-        <div class="footer-address">
-          West National Park West park, 33, 115 27 Sydney +61(0)735335745
-          westpark@org.au
-        </div>
-        <div>
+
+        <div class="footer-social">
           <a href="https://www.facebook.com/login.php/" target="_blank"
             ><img src="./assets/social/logo-facebook.png" alt="Facebook-logo"
           /></a>
@@ -112,8 +120,10 @@
           <a href="https://www.youtube.com/" target="_blank">
             <img src="./assets/social/logo-youtube.png" alt="Youtube-logo"
           /></a>
+          <div>
+            <p class="footer-copyright">&copy; 2025 All rights reserved</p>
+          </div>
         </div>
-        <p class="footer-copyright">&copy; 2025 All rights reserved</p>
       </div>
     </footer>
   </body>

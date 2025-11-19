@@ -61,7 +61,8 @@ let introHeading = document.createElement("h2");
 introHeading.textContent = "Welcome to the Reptiles Section";
 
 let introParagraph = document.createElement("p");
-introParagraph.textContent = "Explore the fascinating world of reptiles! Click on a name in the sidebar to learn more about each animal.";
+introParagraph.textContent =
+    "Australia is home to some of the world's most remarkable reptiles, with over 1,000 species found across deserts, forests, wetlands, and coastal regions. Many of them are unique to the continent, including a wide range of skinks, geckos, pythons, and monitor lizards. Australia also hosts some of the most venomous snakes on the planet, yet most species avoid human contact and play an essential role in balancing ecosystems. From the ancient and slow-moving freshwater turtles to the lightning-fast perentie — the largest monitor lizard in Australia — reptiles continue to shape the continent's biodiversity. Despite their adaptability, many species face threats from habitat loss, invasive predators, and climate change.";
 
 introContainer.appendChild(introHeading);
 introContainer.appendChild(introParagraph);
