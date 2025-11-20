@@ -38,12 +38,11 @@ li {
   margin: 0.5rem 0rem;
 }
 
-.box h2{
+.box h2 {
   padding: 15px 0px;
 }
 
-.box
-h4 {
+.box h4 {
   margin: 0.5rem 0rem;
   font-size: 1rem;
 }
@@ -66,7 +65,7 @@ h4 {
   font-weight: 400;
 }
 
-.welcome-message-subheading{
+.welcome-message-subheading {
   text-align: center;
   font-weight: 300;
   color: var(--color-primary);
@@ -75,8 +74,7 @@ h4 {
 
 @media (min-width:769px) {
 
-  .box
-  h4 {
+  .box h4 {
     font-size: 1.1rem;
   }
 
