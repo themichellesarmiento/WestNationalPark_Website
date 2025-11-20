@@ -8,24 +8,6 @@ li {
   color: var(--color-primary);
 }
 
-.group {
-  font-weight: 300;
-  font-size: 1.4rem;
-  padding-top: 30px;
-  padding-bottom: 15px;
-}
-
-.animal {
-  font-weight: 300;
-  font-size: 1.15rem;
-  padding: 10px;
-}
-
-.animal:hover {
-  color: var(--color-primary);
-  cursor: pointer;
-}
-
 .image-container {
   overflow: hidden;
 }
@@ -56,6 +38,10 @@ li {
   margin: 0.5rem 0rem;
 }
 
+.box h2{
+  padding: 15px 0px;
+}
+
 .box
 h4 {
   margin: 0.5rem 0rem;
@@ -63,15 +49,7 @@ h4 {
 }
 
 .button {
-  background-color: var(--color-secondary);
-  border-radius: 10px;
-  border: 1px solid var(--color-secondary);
-  color: var(--color-background);
-  cursor: pointer;
   display: inline-block;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
   text-decoration: none;
 }
 

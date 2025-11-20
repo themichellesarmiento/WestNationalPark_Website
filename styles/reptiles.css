@@ -1,13 +1,6 @@
-/* COLORS */
-:root {
-    --color-primary: #e29300;
-    --color-secondary: #2d451b;
-    --color-background: #eee9dd;
-    --color-text: #210e08;
-}
 
 /* SIDEBAR */
-.sidebar-heading {
+/* .sidebar-heading {
     font-weight: 300;
     font-size: 1.4rem;
     padding-top: 30px;
@@ -31,20 +24,20 @@
 .sidebar-heading.active {
     font-weight: 400;
     color: var(--color-primary);
-}
+} */
 
 /* MAIN CONTENT */
 .content {
-    flex: 1;
+    /* flex: 1;
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto; */
     background: none;
-    background-color: #eee9dd;
+    background-color: var(--color-background);
 }
 
 .intro-content {
     display: none;
-    /* padding: 20px 0; */
+    padding: 20px 0;
 }
 
 .intro-content.active {
@@ -99,15 +92,15 @@
 
 /* READ MORE CONTENT */
 .read-more {
-    background-color: var(--color-secondary);
+    /* background-color: var(--color-secondary);
     color: var(--color-background);
     padding: 10px 20px;
     border: none;
-    cursor: pointer;
+    cursor: pointer; */
     width: fit-content;
     display: inline-block;
-    margin-top: 20px;
-    font-size: 0.95rem;
+    /* margin-top: 20px;
+    font-size: 0.95rem; */
 }
 
 .additional-info {

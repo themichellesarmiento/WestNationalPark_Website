@@ -104,7 +104,7 @@ const displayWelcomeContent = () => {
   const contenWrapper = document.createElement('div');
   const contentTitle = document.createElement('h2');
   const contentParagraph = document.createElement('p');
-  // contenWrapper.style.padding = '20px 0';
+  contenWrapper.style.padding = '20px 0';
   contentTitle.textContent = 'Welcome to the birds section';
   contentParagraph.textContent = contentWelcomeDescription;
   contentTitle.style.padding = '15px 0';
