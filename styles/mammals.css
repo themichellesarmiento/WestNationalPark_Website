@@ -1,6 +1,6 @@
 /* Intro text */
 .intro-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 20px 0;
 }
@@ -107,19 +107,4 @@ br{
   .toggle-btn {
     margin: 10px;
   }
-
-  .intro-text {
-    font-size: 1.5rem;
-  }
-
-  .intro_subtitle {
-    margin-top: 10px;
-  }
-
-  /* .sidebar-names {
-        flex: 1 1 100%;
-        text-align: center;
-        margin: 5px 0;
-        padding: 8px 12px;
-    } */
 }
