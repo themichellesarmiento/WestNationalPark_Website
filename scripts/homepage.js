@@ -153,7 +153,7 @@ zooAnimals.forEach(({ name, description, group, food, img, url }) => {
   linkContainer.classList.add('button');
   linkContainer.textContent = `View ${group} page`;
   linkContainer.href = url;
-  linkContainer.target = '_blank';
+
 
   const imageContainer = document.createElement('div');
   imageContainer.classList.add('image-container');
