@@ -60,8 +60,8 @@ mainContent.appendChild(introParagraph);
 
 // Sidebar heading
 let sidebarHeading = document.createElement("h3");
-sidebarHeading.textContent = "MAMMALS";
-sidebar.classList.add("sidebar_title");
+sidebarHeading.textContent = "Mammals";
+sidebarHeading.classList.add("sidebar_title");
 sidebar.appendChild(sidebarHeading);
 
 // CREATE SIDEBAR ITEMS
