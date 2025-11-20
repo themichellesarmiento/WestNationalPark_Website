@@ -1,8 +1,9 @@
 /* Intro text */
 .intro-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  padding: 20px 0;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .intro_subtitle {
@@ -10,14 +11,14 @@
   padding: 15px 0;
 }
 
-.sidebar_title {
+/* .sidebar_title {
   font-weight: 300;
   font-size: 1.4rem;
   padding-top: 30px;
   padding-bottom: 15px;
-}
+} */
 
-.sidebar-names {
+/* .sidebar-names {
   font-weight: 300;
   font-size: 1.15rem;
   padding: 10px;
@@ -31,7 +32,7 @@
 .sidebar-names.active {
   color: var(--color-primary);
   font-weight: 400;
-}
+} */
 
 /* Animal content */
 .animal-content {
@@ -45,9 +46,9 @@
 }
 
 .animal-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  padding: 15px 0px;
 }
 
 .animal-img {
@@ -65,12 +66,12 @@
   padding-bottom: 15px;
 }
 
-.extra-info{
+.extra-info {
   font-size: 0.9rem;
   padding: 10px;
 }
 
-br{
+br {
   display: block;
   margin-bottom: 15px;
   content: "";
@@ -79,13 +80,13 @@ br{
 .toggle-btn {
   display: inline-block;
   /* width: 100%; */
-  margin-top: 10px 0;
+  /* margin-top: 10px 0;
   padding: 10px 20px;
   font-size: 0.95rem;
   background-color: var(--color-secondary);
   color: var(--color-background);
   border: none;
-  cursor: pointer;
+  cursor: pointer; */
   transition: 0.2s;
 }
 
@@ -100,26 +101,11 @@ br{
     transition: transform 0.3s ease;
   }
 
-  .animal-title {
+  /* .animal-title {
     font-size: 1.8rem;
-  }
+  } */
 
-  .toggle-btn {
+  /* .toggle-btn {
     margin: 10px;
-  }
-
-  .intro-text {
-    font-size: 1.5rem;
-  }
-
-  .intro_subtitle {
-    margin-top: 10px;
-  }
-
-  /* .sidebar-names {
-        flex: 1 1 100%;
-        text-align: center;
-        margin: 5px 0;
-        padding: 8px 12px;
-    } */
+  } */
 }
