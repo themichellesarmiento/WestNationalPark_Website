@@ -104,7 +104,7 @@ const displayWelcomeContent = () => {
   const contenWrapper = document.createElement('div');
   const contentTitle = document.createElement('h2');
   const contentParagraph = document.createElement('p');
-
+  contenWrapper.style.padding = '20px 0';
   contentTitle.textContent = 'Welcome to the birds section';
   contentParagraph.textContent = contentWelcomeDescription;
   contentTitle.style.padding = '15px 0';
@@ -162,7 +162,7 @@ const displayContent = (index) => {
   }
 
   contentButton = seeMoreButton;
-  seeMoreButton.textContent = seemore ? 'See less' : 'See more';
+  seeMoreButton.textContent = seemore ? 'Read less' : 'Read more';
   seeMoreButton.classList.add('content-button');
 
   seeMoreButton.addEventListener('click', () => {

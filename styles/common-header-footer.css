@@ -43,7 +43,6 @@ ul {
   align-items: center;
   padding: 10px 15px;
   width: 100%;
-
   position: sticky;
   top: 0;
 }
@@ -105,6 +104,13 @@ ul {
 
 .menu-bar.mobile li:nth-child(4) img {
   margin-right: 0;
+}
+
+body.active-menuitem-mammal a.active-menuitem-mammal,
+body.active-menuitem-reptiles a.active-menuitem-reptiles,
+body.active-menuitem-birds a.active-menuitem-birds,
+body.active-menuitem-about-us-page a.active-menuitem-about-us-page {
+  color: var(--color-background);
 }
 
 /* MOBILE  MAIN */
@@ -199,7 +205,6 @@ main {
   padding: 10px 15px;
   flex-direction: column;
   gap: 20px;
-
 }
 
 .footer-logo img {
@@ -262,7 +267,6 @@ main {
 }
 
 @media (min-width: 769px) {
-
   /* DESKTOP HEADER SETTINGS */
   h3 {
     font-weight: 500;
@@ -350,7 +354,6 @@ main {
 
   .content {
     height: auto;
-
   }
 
   /* DESKTOP FOOTER SETTINGS */
