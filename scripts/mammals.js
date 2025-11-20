@@ -1,5 +1,4 @@
 // FUNCTION CONSTRUCTOR 
-
 function Mammals(name, lifespan, group, food, description, length, weight, found, image) {
     this.name = name;
     this.lifespan = lifespan;
@@ -40,6 +39,9 @@ let mammalArray = [mammalEchidna, mammalTasmanianDevil, mammalQuokka];
 // SELECT SIDEBAR AND MAIN CONTENT 
 let sidebar = document.querySelector(".sidebar");
 let mainContent = document.querySelector(".mammal_Container");
+sidebar.innerHTML = ``;
+mainContent.style.backgroundImage = 'none';
+mainContent.style.backgroundColor = '#eee9dd';
 
 // Default welcome text
 let introText = document.createElement("div");
@@ -49,17 +51,21 @@ mainContent.appendChild(introText);
 
 // Default welcome short paragraph
 let introParagraph = document.createElement("p");
-introParagraph.classList.add("intro_subtitle")
-introParagraph.textContent = "Australia is home to a wide variety of unique mammals, from the spiny Echidna to the friendly Quokka.";
-mainContent.appendChild(introParagraph)
+introParagraph.classList.add("intro_subtitle");
+introParagraph.textContent = `Mammals in Australia form a group that is quite different from what you find in the rest of the world. 
+The main reason for this is the continent’s long isolation. Australia broke away from other landmasses millions of years ago, 
+and its wildlife continued to develop without influence from animals in Asia, Africa or the Americas. This allowed older branches 
+of the mammal family to survive and adapt in their own way.`;
+mainContent.appendChild(introParagraph);
 
 // Sidebar heading
 let sidebarHeading = document.createElement("h3");
 sidebarHeading.textContent = "MAMMALS";
+sidebar.classList.add("sidebar_title");
 sidebar.appendChild(sidebarHeading);
 
 // CREATE SIDEBAR ITEMS
-    mammalArray.forEach(mammal => {
+mammalArray.forEach(mammal => {
     let sidebarItem = document.createElement("div");
     sidebarItem.textContent = mammal.name;
     sidebarItem.classList.add("sidebar-names");
@@ -83,7 +89,7 @@ sidebar.appendChild(sidebarHeading);
     // Short description
     let desc = document.createElement("div");
     desc.classList.add("animal-description");
-    desc.textContent = mammal.description.substring();
+    desc.textContent = mammal.description;
 
     // Extra info container
     let extraInfo = document.createElement("div");
@@ -121,7 +127,7 @@ sidebar.appendChild(sidebarHeading);
     animalContent.appendChild(toggleBtn);
     mainContent.appendChild(animalContent);
 
-    // SIDEBAR ITEM CLICK WITH ACTIVE LOGIC 
+    // SIDEBAR ITEM CLICK WITH ACTIVE LOGIC
     sidebarItem.addEventListener("click", () => {
         const isActive = sidebarItem.classList.contains("active");
 
@@ -129,18 +135,16 @@ sidebar.appendChild(sidebarHeading);
         document.querySelectorAll(".sidebar-names").forEach(item => item.classList.remove("active"));
         document.querySelectorAll(".animal-content").forEach(content => content.classList.remove("active"));
 
-        // If clicking same active item, show welcome message
         if (isActive) {
+            // Same item clicked → show welcome message
             introText.style.display = "block";
-            introParagraph.style.display = "block"
-        } 
-        else {
-            // Show selected animal content
+            introParagraph.style.display = "block";
+        } else {
+            // New item clicked → show content + active
             sidebarItem.classList.add("active");
             animalContent.classList.add("active");
             introText.style.display = "none";
-
-            introParagraph.style.display = "none"; 
+            introParagraph.style.display = "none";
         }
     });
 });
@@ -151,43 +155,3 @@ document.querySelectorAll(".animal-img").forEach(img => {
         img.classList.toggle("zoomed");
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
