@@ -161,7 +161,8 @@ main {
   cursor: pointer;
 }
 
-.sidebar-link-active,.sidebar-names:active,.sidebar-heading.active{
+.sidebar-link-active,.sidebar-names.active,
+.sidebar-heading.active{
   font-weight: 400;
   color: var(--color-primary);
 }
