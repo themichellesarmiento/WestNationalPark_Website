@@ -162,7 +162,7 @@ const displayContent = (index) => {
   }
 
   contentButton = seeMoreButton;
-  seeMoreButton.textContent = seemore ? 'Read less' : 'Read more';
+  seeMoreButton.textContent = seemore ? 'Read Less' : 'Read More';
   seeMoreButton.classList.add('content-button');
 
   seeMoreButton.addEventListener('click', () => {
